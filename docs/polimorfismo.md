@@ -139,7 +139,8 @@ En este [caso práctico](https://github.com/motorflash/polymorphism) tenemos cla
 Veremos como modificando las clases podemos mejorar el código para que sea más fácil de entender y de modificar.
 
 
-###Sin herencia:
+Sin herencia:
+-------------
 
 En el ejemplo sin herencia tenemos una clase Cat y una Lion. Algunos métodos hacen lo mismo, así que estamos duplicando código:
 
@@ -151,7 +152,8 @@ El servicio tiene un método para "dar vida" a cualquier animal. El problema es 
 [Servicio](https://github.com/motorflash/polymorphism/blob/master/src/AppBundle/Service/Basic/AnimalService.php)
 [Tests de servicio](https://github.com/motorflash/polymorphism/blob/master/tests/AppBundle/Service/Basic/AnimalServiceTest.php)
 
-###Herencia simple:
+Herencia simple:
+----------------
 
 En este ejemplo vamos a utilizar la herencia para no duplicar código. Esta vez tenemos una clase Animal con métodos "por defecto" para ser extendida por las dos anteriores.
 De esta forma, Cat y Lion sólo implementan los métodos que son diferentes:
@@ -167,7 +169,8 @@ Ahora desde el servicio podemos usar "Type hinting/Determinación de tipos" para
 Sólo tenemos un pequeño problema. No queremos que Animal sea instanciable, porque sólo queremos crear animales de un tipo concreto. Animal es un concepto abstracto en este caso.
 En el siguiente ejemplo, modificaremos la clase Animal para que sea abstracta y así no sea instanciable.
 
-###Herencia con clases abstractas:
+Herencia con clases abstractas:
+-------------------------------
 
 En este caso vamos a añadir una clase nueva Dog. Tanto Dog como Cat tienen un método "domesticar" (tame), pero Lion no porque es un animal salvaje.
 Para que podamos seguir usando Animal como argumento necesitamos definir el método "tame" en Lion también, pero que no haga nada. Como podemos tener muchos animales salvajes, para no tener que definir el método en todos, vamos a añadir el método "tame" a la clase Animal y que no haga nada. Luego, si un animal es "domable" implementará el método "tame".
@@ -183,7 +186,8 @@ Podríamos tener otra clase Pet que implementara "tame" y heredar e las dos clas
 
 No podemos usar herencia múltiple en PHP. Por otra parte hay motivos de sobra para no usar herencia múltiple en general. En pocas palabras, le herencia múltiple provoca ambigüedad. Más info: [Deadly Diamond of Death](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem)
 
-###Interfaces:
+Interfaces:
+-----------
 
 Viendo el caso anterior podríamos decir que Lion no debería poder llamar a "tame" ya que no es domesticable, es decir, en lugar de no hacer nada, al llamar al método "tame" de un animal salvaje debería lanzar un error. Como hemos visto antes, no podemos usar herencia múltiple, pero sí podemos implementar varias interfaces. De este modo podemos decir que un objeto que hereda de Animal implementa también otros métodos (como "tame"). Esto lo hacemos creando una interfaz Pet que implementan Dog y Cat:
 
