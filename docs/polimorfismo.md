@@ -1,4 +1,5 @@
-#POLIMORFISMO:
+POLIMORFISMO:
+=============
 
 Introducción:
 ============
