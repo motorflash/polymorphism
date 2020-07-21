@@ -15,6 +15,8 @@ You can find examples guiding you through all of the steps bellow
 - [Service\AbstractInheritance][5] uses models from [Model\AbstractInheritance][6]
 - [Service\InterfaceImplementation][7] uses models from [Model\InterfaceImplementation][8]
 
+Extended explanation in spanish can be found [here][9]
+
 [1]: https://github.com/motorflash/polymorphism/tree/master/src/AppBundle/Service/Basic
 [2]: https://github.com/motorflash/polymorphism/tree/master/src/AppBundle/Model/Basic
 [3]: https://github.com/motorflash/polymorphism/tree/master/src/AppBundle/Service/Inheritance
@@ -23,6 +25,7 @@ You can find examples guiding you through all of the steps bellow
 [6]: https://github.com/motorflash/polymorphism/tree/master/src/AppBundle/Model/AbstractInheritance
 [7]: https://github.com/motorflash/polymorphism/tree/master/src/AppBundle/Service/InterfaceImplementation
 [8]: https://github.com/motorflash/polymorphism/tree/master/src/AppBundle/Model/InterfaceImplementation
+[9]: https://github.com/motorflash/polymorphism/tree/master/docs/polimorfismo.md
 
 Testing
 -------
